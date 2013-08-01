@@ -1,0 +1,12 @@
+.container {
+	background:green;
+}
+.f_left {
+	float:left;
+	height:100px;
+	width:100px;
+	background:blue;
+}
+.clear {
+	clear:both;
+}
