@@ -4,82 +4,70 @@ var cars = [
 		"model" : "M Coupe",
 		"color" : "green",
 		"weight" : 3130,
-		"horsepower" : 240
+		"horsepower" : 240,
+		"image" : "mcoupe.jpeg"
 	},
 	{
 		"make": "Porsche",
 		"model": "Boxster",
 		"color": "silver",
 		"weight": 2980,
-		"horsepower": 217
+		"horsepower": 217,
+		"image": "boxster.jpg"
 	},
 	{
 		"make": "Audi",
 		"model": "TT",
 		"color": "black",
 		"weight": 2778,
-		"horsepower": 197
+		"horsepower": 197,
+		"image": "tt.jpg"
 	}
 ];
 
 
 
+// everything in here will wait until the page loads
 $(function() {
+/*	// solving the problem with an each loop
+	var fastest = cars[0];
+	$(cars).each(function(index, item) {
+		var fastest_pw = fastest.horsepower / fastest.weight;
+		var item_pw = item.horsepower / item.weight;
+		if (fastest_pw > item_pw) {
 
-	// everything in here will wait until the page loads
-	// var x = 4;
-	// var y = 5;
-	// var b = x + y;
-
-	// var first_name = 'shaun';
-	// var last_name = 'russell';
-	// var full_name = first_name + last_name;
-
-	// $('h1').css('fontSize', b).text(full_name);
-
-	// $.ajax('/cars.json', {
-	// 	complete : function(response) {
-	// 		console.log(response.responseJSON);
-	// 	}
-	// });
-
-	console.log(cars);
-
-
-
-
-
-	function race(car1, car2) {
-		// determine the winner
-		var car1_pw = car1.horsepower / car1.weight;
-		var car2_pw = car2.horsepower / car2.weight;
-		if (car1_pw > car2_pw) {
-			return car1;
 		} else {
-			return car2;
+			fastest = item;
 		}
-	}
-
-	var winner = race(cars[0], cars[1]);
-	console.log(winner);
-
-
-
-
-
-
-
-
-	$(cars).each(function(index, car) {
-		var li = '<li>' + car.color + ' ' + car.model + '</li>';
-		var power_to_weight = '<li>' + car.horsepower / car.weight + '</li>';
-		$('#cars_list').append(li);
-		$('#cars_list').append(power_to_weight);
 	});
+
+	console.log(fastest);
+*/
+
+	// the second solution uses sorting to find the fastest car
+	pw_ratios = [];
+	ratios_to_cars = {};
+	
+	$(cars).each(function(i, car) {
+		pw_ratios.push(car.horsepower / car.weight);
+		ratios_to_cars[car.horsepower / car.weight] = i;
+	});
+	pw_ratios.sort();
+	largest_pw = pw_ratios.pop();
+	car_id = ratios_to_cars[largest_pw];
+	winner = cars[car_id];
+
+	second_pw = pw_ratios.pop();
+	second_id = ratios_to_cars[second_pw];
+	second = cars[second_id]
+	console.log(winner, second);
 
 
 
 
 });
+
+
+
 
 
