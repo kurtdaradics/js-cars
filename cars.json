@@ -1,0 +1,23 @@
+[
+	{
+		"make" : "BMW",
+		"model" : "M Coupe",
+		"color" : "green",
+		"weight" : 3130,
+		"horsepower" : 240
+	},
+	{
+		"make": "Porsche",
+		"model": "Boxster",
+		"color": "silver",
+		"weight": 2980,
+		"horsepower": 217
+	},
+	{
+		"make": "Audi",
+		"model": "TT",
+		"color": "black",
+		"weight": 2778,
+		"horsepower": 197
+	}
+]

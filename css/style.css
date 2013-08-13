@@ -1,12 +1,7 @@
-.container {
-	background:green;
+h1 {
+	color:yellow;
 }
-.f_left {
-	float:left;
-	height:100px;
-	width:100px;
-	background:blue;
-}
-.clear {
-	clear:both;
-}
+
+#cars_list {
+	padding:0;
+}f
